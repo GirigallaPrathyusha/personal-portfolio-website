@@ -1,1 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prathyusha - Portfolio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #f0f0f5;
+            overflow-x: hidden;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            background-color: rgba(30, 30, 30, 0.9); 
+            padding: 20px 50px;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: #e63946;
+        }
+
+        section {
+            padding: 80px 50px;
+            text-align: center;
+            color: #f0f0f5;
+            min-height: 100vh; 
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #e63946;
+            position: relative;
+            top: 0; 
+        }
+
+       
+        .hero-section {
+            background-image: url('2.jpg'); 
+        }
+
+        .about-section {
+            background-image: url('1.jpeg'); 
+        }
+
+        .skills-section {
+            background-image: url('4.jpeg'); 
+        }
+
+        .projects-section {
+            background-image: url('3.jpg'); 
+        }
+
+        .contact-section {
+            background-image: url('5.jpeg'); 
+        }
+
+        
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+
+        .hero-content {
+            max-width: 50%;
+            z-index: 1; 
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            color: #fff;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .hero-content h1 span {
+            color: #e63946;
+        }
+
+        .hero-content h2 {
+            font-size: 32px;
+            color: #ccc;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .hero-content .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #e63946;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+
+        .hero-content .btn:hover {
+            background-color: #c72d37;
+        }
+
+        
+        .profile-image {
+            width: 300px; 
+            height: 300px; 
+            background-image: url('prathyusha.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%; 
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s;
+            z-index: 1; 
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+        
+.about-section {
+    line-height: 1.6; 
+    letter-spacing: 0.5px; 
+}
+
+.about-section p {
+    font-size: 18px; 
+    margin: 10px 0; 
+}
+
+
+        
+        .skills-section .skills-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center; 
+            height: 100%; 
+        }
+
+        .skills-section .skills-list span {
+            background-color: #e63946;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 25px;
+            transition: transform 0.3s;
+        }
+
+        .skills-section .skills-list span:hover {
+            transform: scale(1.1);
+        }
+
+        
+        .project-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .project-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s ease;
+            text-align: center;
+            color: #333; 
+        }
+
+        .project-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .contact form {
+            max-width: 600px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact input, .contact textarea, .contact button {
+            margin: 10px 0;
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .contact input, .contact textarea {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .contact button {
+            background-color: #e63946;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact button:hover {
+            background-color: #c72d37;
+        }
+
+
+        footer {
+            background-color: #1e1e1e;
+            color: #ccc;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .hero-content, .profile-image {
+                max-width: 100%;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+                text-align: center;
+            }
+
+            .hero-content h2 {
+                font-size: 24px;
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 200px;
+                height: 200px;
+                margin-top: 20px;
+            }
+        }
+
+        
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+   
+    <section class="hero-section" id="home">
+        <div class="hero-content">
+            <h1>Hi, I'm <span>Prathyusha</span></h1>
+            <h2>Web Developer</h2>
+            <a href="#contact" class="btn">Connect</a>
+        </div>
+        <div class="profile-image"></div>
+    </section>
+
+    
+    <section class="about-section" id="about">
+        <h2>About Me</h2>
+        <div>
+            <p>
+                Hello! I'm Prathyusha, a passionate front-end web developer with expertise in building dynamic and responsive web applications. I enjoy translating design into interactive, user-friendly digital experiences.
+            </p>    
+            <p>
+                I specialize in front-end technologies like HTML, CSS, and JavaScript, which I honed during my recent internship. Currently,I love collaborating on projects that make a difference. Let's connect and create something amazing together!
+             </p>
+        </div>
+    </section>
+    
+    <section class="skills-section" id="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Python</span>
+            <span>C++</span>
+            <span>DSA</span>
+            <span>Java</span>
+        </div>
+    </section>
+
+    
+    <section class="projects-section" id="projects">
+        <h2>Projects</h2>
+        <div class="project-list">
+            <div class="project-item">
+                <h3 style="color: #e63946;">Portfolio Website</h3> 
+                <p>A responsive portfolio website built with HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="project-item">
+                <h3 style="color: #e63946;">Handwritten Digit Recognition</h3> 
+                <p>A machine learning model using CNN to identify handwritten digits with high accuracy.</p>
+            </div>
+            <div class="project-item">
+                <h3 style="color: #e63946;">Hostel Management System</h3> 
+                <p>Efficiently allocates rooms to students based on academic year and gender.</p>
+            </div>
+            <div class="project-item">
+                <h3 style="color: #e63946;">Responsive Landing page</h3> 
+                <p>Explore my portfolio showcasing innovative web development projects, from interactive applications to seamless user interfaces, designed to elevate user experiences.</p>
+            </div>
+            <div class="project-item">
+                <h3 style="color: #e63946;">Weather app</h3> 
+                <p>A responsive app that delivers real-time weather updates and forecasts by city, featuring an intuitive design for easy navigation.</p>
+            </div>
+        </div>
+    </section>
+
+   
+   <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    
+    <footer>
+        <p>&copy; 2024 Prathyusha</p>
+    </footer>
+</body>
+</html>
